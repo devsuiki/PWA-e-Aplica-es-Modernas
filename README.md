@@ -1,2 +1,2 @@
-# PWA-e-Aplica-es-Modernas
+# PWA-e-Aplicacoes-Modernas
 Trabalho escolar sobre PWA
