@@ -1,0 +1,136 @@
+body {
+    background: rgb(16, 0, 49);
+    font: normal 15pt Arial;  
+}
+
+header{
+    color:rgb(255, 255, 255);
+    text-align: center;    
+
+}
+
+section {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 200px;
+    width: 550px;
+    margin: auto;
+    box-shadow: 5px 5px 10px black;
+    
+}
+
+pwa {
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+aplicacoes{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+/* --- BOTÃO COM 2 TRACINHOS --- */
+.hamburger-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Altere para 'right: 20px' se preferir o botão na direita */
+    width: 45px;
+    height: 45px;
+    background-color: darkblue; /* COR DE FUNDO DO BOTÃO */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Espaço entre os 2 tracinhos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hamburger-btn .bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: white; /* COR DOS TRACINHOS */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animação dos 2 tracinhos virando um "X" ao clicar */
+  .hamburger-btn.open .bar:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+  
+  .hamburger-btn.open .bar:nth-child(2) {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+  
+  
+  /* --- BARRA LATERAL (Escondida por padrão) --- */
+  .sidebar-container {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: -240px; /* Coloca a barra para fora da tela */
+    top: 0;
+    background-color: darkblue; /* COR DE FUNDO DA BARRA */
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0 30px 0; /* Espaço no topo para não cobrir o botão */
+    z-index: 1000;
+    overflow-y: auto;
+    transition: all 0.3s ease; /* Faz o efeito de deslizar suave */
+  }
+  
+  /* Classe aplicada via JavaScript para mostrar a barra */
+  .sidebar-container.open {
+    left: 0; /* Traz a barra para dentro da tela */
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Lista de links */
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  /* Links customizáveis */
+  .sidebar-link {
+    display: block;
+    color: white; /* COR DO TEXTO DOS LINKS */
+    text-decoration: none;
+    padding: 14px 24px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+  }
+  
+  /* Passar o mouse por cima */
+  .sidebar-link:hover {
+    background-color: midnightblue; /* FUNDO NO HOVER */
+    padding-left: 30px;
+  }
+  
+  /* Item destacado automaticamente ao rolar a página */
+  .sidebar-link.active {
+    background-color: midnightblue; /* FUNDO DO ITEM ATIVO */
+    color: cyan; /* TEXTO DO ITEM ATIVO */
+    border-left-color: cyan; /* BARRINHA DO ITEM ATIVO */
+    font-weight: 600;
+  }
+  
+
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+
+}
