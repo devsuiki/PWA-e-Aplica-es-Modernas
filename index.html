@@ -10,63 +10,147 @@
 </head>
 <body>
 
-    <PWAeAplicaçõesModernas>
+  <PWAeAplicaçõesModernas>
     <header>
-        <h1> PWA e Aplicações Modernas </h1>
+        <h1> PWA E APLICAÇÕES MODERNAS </h1>
+        <p> Definição </p>
     </header>
-    </PWAeAplicaçõesModernas>
+  </PWAeAplicaçõesModernas>
 
     <section>
-         <div>
-           1 testando...
-       </div>    
+      <div>
+      PWA ou aplicativos web progressivos são simplesmente a websites que você pode instalar da mesma forma que um aplicativo da Playstore. Eles trazem os bônus dos aplicativos (conveniência e usabilidade off-line) e o melhor dos websites (Atualizações rápidas e peso otimizado).
+<br>
+      Aqui vão alguns dos benefícios dos PWA:
+      <br>
+     -Velocidade e fácil instalação
+     <br>
+     -Requisitos de armazenamento mínimos
+     <br>
+     -Performance confiável off-line
+     <br>
+     -Compatibilidade entre dispositivos
+     <br>
+     -Updates automáticos e notificações
+      </div>    
     </section>
 
    <pwa> 
-       <h1> PWA </h1>
+       <h1> SERVICE WORKERS </h1>
    </pwa>
 
     <section>
       <div>
-          2 meh
+        São scripts que rodam atrás no backend, separados da sua página web. Eles agem como uma ponte entre a aplicação web e a internet. Seu principal papel é garantir que seu app fale com a internet.
+<br>
+Eles podem salvar partes importantes no dispositivo do usuário, o que significa que seu aplicativo pode funcionar mesmo sem internet. Também podem atualizar em silêncio o conteúdo da aplicação e enviar notificações, assim como um aplicativo nativo.
+
+
       </div>    
-   </section>
+    </section>
 
-   <aplicacoes> 
-    <h1> Aplicações </h1>
-   </aplicacoes>
+  <manifest> 
+    <h1> MANIFEST </h1>
+  </manifest>
 
- <section>
+  <section>
     <div>
-       mehhhhh
+      Conhecido como app manifest, são um arquivo JSON. São essenciais pois dizem ao dispositivo do usuário como o aplicativo deve parecer e se comportar.
+      <br>
+      É como a identificação do seu aplicativo- ele inclui o nome do aplicativo, seus icones, como a primeira página deve abrir e como sera demonstrada. Esse arquivo faz seu web app parecer mais um aplicativo regular.
+      
    </div>    
-</section>
+  </section>
 
-<!-- Botão com 2 Tracinhos (Abre e fecha a barra) -->
-<button class="hamburger-btn" aria-label="Abrir menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  
-  <!-- Barra Lateral (Começa escondida fora da tela) -->
-  <nav class="sidebar-container">
-    <ul class="sidebar-menu">
-      <li><a href="#PWAeAplicaçõesModernas" class="sidebar-link active">PWA e Aplicações Modernas</a></li>
-      <li><a href="#secao2" class="sidebar-link">Seção 2</a></li>
-      <li><a href="#secao3" class="sidebar-link">Seção 3</a></li>
-      <li><a href="#secao4" class="sidebar-link">Seção 4</a></li>
-      <li><a href="#secao5" class="sidebar-link">Seção 5</a></li>
-      <li><a href="#secao6" class="sidebar-link">Seção 6</a></li>
-    </ul>
-  </nav>
-  
-  
-  
+  <cache> 
+    <h1> CACHE </h1>
+  </cache>
+
+  <section>
+    <div>
+      É vital para o funcionamento de aplicações off-line, é como a memória do seu aplicativo. Ele guarda partes importantes para serem carregadas rapidamente depois, mesmo com a ausência de internet. É crucial para o app funcionar off-line.
+<br>
+      Dentro das PWA's há três formas de lidar com o cache: sendo a primeira cache-first (o app verifica o cache antes da internet), network-first (o oposto), e stale-while-revalidate (uma mistura de ambos). A escolha depende do funcionamento do seu app
+      
+   </div>    
+  </section>
+
+  <codigo> 
+    <h1> CÓDIGO </h1>
+    <p> Exemplo de código </p>
+  </codigo>
+
+  <section>
+    <div>
+      1 - Configure o Manifest
+      {
+          "name": "Ophy's To-Do List",
+          "short_name": "OphyToDo",
+          "icons": [
+              {
+                  "src": "favicon.ico",
+                  "sizes": "64x64 32x32 24x24 16x16",
+                  "type": "image/x-icon"
+              }
+          ],
+          "start_url": "/",
+          "display": "standalone",
+          "theme_color": "#000000",
+          "background_color": "#ffffff"
+      }      
+   </div>  
+   <div>
+    2 - Configure o script
+
+self.addEventListener('install', function(event) {
+    // Perform install steps
+    var CACHE_NAME = 'ophy-todo-cache-v1';
+    var urlsToCache = [
+        '/',
+        '/styles.css',
+        '/app.js'
+    ];
+
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function(cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
+            })
+    );
+});
+   </div>  
+  </section>
+
+  <exemplos> 
+    <h1> USOS REAIS </h1>
+    <p> exemplos de empresas que utilizam </p>
+  </exemplos>
+
+  <section>
+    <div>
+      Khan-Academy
+      Um site educacional bem conhecido que usa o PWA que permite os estudantes acessem e instalarem as lições e cursos sem disponibilidade de internet. Particularmente útil em locais sem acess
+      <br>
+      Starbucks
+      Tem um PWA que permite os clientes verem o cardápio e fazerem pedidos mesmo que não tenham acesso a internet. Isso torna a experiência e vendas para os consumidores ainda melhor.
+      <br>
+      Trivago
+      A empresa conhecida pelo seu serviço como um motor de buscas focado em hotéis, desenvolveu um PWA que permite usuários terem acesso ao catálogo mesmo sem conexão à internet. Isso contribuiu para o aumento de conversão e engajamento do usuário.
+
+   </div>    
+  </section>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar">
+      <div class="progress-circle"></div>
+    </div>
+  </div>
 
     <footer>
         <p>&copy; enterprise</p>        
     </footer>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
         
 </body>
 </html>
