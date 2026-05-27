@@ -12,11 +12,12 @@ header{
 section {
     background: rgb(255, 255, 255);
     border-radius: 10px;
-    padding: 100px;
+    padding: 20px 40px 40px 40px;
     width: 500px;
     margin: auto;
     box-shadow: 5px 5px 10px black;
     text-align: justify;
+    height: auto;
 }
 
 pwa {
